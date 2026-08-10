@@ -1,0 +1,24 @@
+# Whac-A-Mole
+#
+# Install with:
+#     pip install -r requirements.txt
+#
+# Only three runtime dependencies, and none of them does any graphics or image
+# processing for us:
+#
+#   numpy       array storage and elementwise arithmetic (the framebuffer is a
+#               NumPy array; every algorithm is written on top of it)
+#   pygame-ce   window, event loop, timing and audio output only -- no drawing
+#               calls are used, the finished pixel array is handed over whole
+#   matplotlib  the post-game filter report figures
+#
+# pygame-ce is the community edition of pygame.  It imports as `pygame`, so the
+# code is identical either way, and it is the only one with wheels for
+# Python 3.13+.  On Python 3.12 or older, plain `pygame>=2.5` also works.
+
+numpy>=1.24
+pygame-ce>=2.4
+matplotlib>=3.6
+
+# Development only -- not needed to play the game.
+pytest>=7.0
